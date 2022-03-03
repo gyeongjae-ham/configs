@@ -1,0 +1,41 @@
+call plug#begin('~/.vim/plugged')
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'easymotion/vim-easymotion'
+call plug#end()
+
+if has("syntax")
+  syntax on
+endif
+
+imap kj <ESC>
+set timeoutlen=150
+nnoremap ; :
+vnoremap ; :
+let mapleader= ","
+map <leader>w <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
+map <leader>e <Plug>(easymotion-bd-e)
+map <leader>f <Plug>(easymotion-s)
+
+set hlsearch
+set nu
+set rnu
+set autoindent
+set ts=2
+set sts=2
+set cindent
+set laststatus=2
+set shiftwidth=2
+set showmatch
+set smartcase
+set smarttab
+set smartindent
+set ruler
+set fileencodings=utf8,euc-kr
+
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+" lightline
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
