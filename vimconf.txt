@@ -4,11 +4,12 @@ Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 if has("syntax")
-  syntax on
+	syntax on
 endif
 
 imap kj <ESC>
 set timeoutlen=150
+set clipboard=unnamed
 nnoremap ; :
 vnoremap ; :
 let mapleader= ","
