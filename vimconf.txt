@@ -3,6 +3,8 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree'
 Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 if has("syntax")
