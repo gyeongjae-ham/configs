@@ -6,6 +6,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
 Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 if has("syntax")
@@ -15,31 +18,38 @@ endif
 imap kj <ESC>
 set timeoutlen=150
 set clipboard=unnamed
-" vim 기본적인 네비게이션 세팅
+" vim Í∏∞Î≥∏Ï†ÅÏù∏ ÎÑ§ÎπÑÍ≤åÏù¥ÏÖò ÏÑ∏ÌåÖ
 nnoremap ; :
 vnoremap ; :
 let mapleader= ","
 
-" easymotion 설정
+" easymotion ÏÑ§Ï†ï
 map <leader>w <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
 map <leader>e <Plug>(easymotion-bd-e)
 map <leader>f <Plug>(easymotion-s)
 
-" NERDTree 설정
+" multi cursor set
+map <C-N>  <A-N>
+map <C-P>  <A-P>
+map <C-X>  <A-X>
+map g<C-N> g<A-N>
+
+" NERDTree ÏÑ§Ï†ï
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" fugitive(git 관련) 설정
+" fugitive(git Í¥ÄÎ†®) ÏÑ§Ï†ï
+nnoremap <space>ga :Git add %<TAB><Cr>
 nnoremap <space>gs :G status<CR>
 nnoremap <space>gc :G commit -m
 nnoremap <space>gl :G log<CR>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 
-" vim 기본 설정들
+" vim Í∏∞Î≥∏ ÏÑ§Ï†ïÎì§
 set hlsearch
 set nu
 set rnu
