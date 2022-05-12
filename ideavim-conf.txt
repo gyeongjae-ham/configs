@@ -10,11 +10,18 @@ set scrolloff=5
 imap kj <ESC>
 set timeoutlen=150
 let mapleader = ","
+" easymotion set
 map <leader>w <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
 map <leader>e <Plug>(easymotion-bd-e)
 map <leader>f <Plug>(easymotion-s)
+" multi cursor set
+map <C-N>  <A-N>
+map <C-P>  <A-P>
+map <C-X>  <A-X>
+map g<C-N> g<A-N>
 " Do incremental searching.
+set keep-english-in-normal
 set incsearch
 set ignorecase
 set smartcase
@@ -23,6 +30,9 @@ set easymotion
 set relativenumber
 set number
 set NERDTree
+set surround
+set commentary
+set multiple-cursors
 
 " ; set
 nnoremap ; :
@@ -42,7 +52,22 @@ nnoremap <leader>f gt
 nnoremap <leader>d gT
 nnoremap :qa :action CloseAllEditors<CR>
 
-" ???, ??, ????
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+imap <S-Up> <Esc>v<Up>
+imap <S-Down> <Esc>v<Down>
+imap <S-Left> <Esc>v<Left>
+imap <S-Right> <Esc>v<Right>```
+
+
+
+" 리로드, 복사, 붙여넣기
 set clipboard+=unnamed
 set clipboard+=ideaput
 nnoremap \e :e ~/.ideavimrc<CR>
