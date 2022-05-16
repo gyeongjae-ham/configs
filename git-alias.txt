@@ -2,6 +2,7 @@
 	a = add .
 	b = branch
 	df = diff
+	co = checkout
 	s = status -s
 	st = stash push -m
 	stl = stash list
