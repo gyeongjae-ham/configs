@@ -32,5 +32,4 @@ map ㅗ scrollLeft
 map ㅣ scrollRight
 map r reload
 map ㄱ reload
-map ㅔ openCopiedUrlInCurrentTab
 map ㅖ openCopiedUrlInNewTab
