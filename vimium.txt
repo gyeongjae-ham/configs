@@ -17,9 +17,7 @@ map ㅂ previousTab
 map w nextTab
 map ㅈ nextTab
 map f LinkHints.activateMode
-map ㄹ LinkHints.activateMode
 map t LinkHints.activateModeToOpenInNewForegroundTab
-map ㅅ LinkHints.activateModeToOpenInNewForegroundTab
 map z restoreTab
 map ㅋ restoreTab
 map ㅐ Vomnibar.activate
