@@ -33,3 +33,4 @@ map ㄱ reload
 map ㅖ openCopiedUrlInNewTab
 map n createTab
 map ㅜ createTab
+map ㅎㅑ focusInput
