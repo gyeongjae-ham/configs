@@ -1,0 +1,34 @@
+# Insert your preferred key mappings here.
+
+map d scrollPageDown
+map ㅇ scrollPageDown
+map u scrollPageUp
+map ㅕ scrollPageUp
+map k scrollUp
+map ㅏ scrollUp
+map j scrollDown
+map ㅓ scrollDown 
+map a goBack
+map ㅁ goBack
+map s goForward
+map ㄴ goForward
+map q previousTab
+map ㅂ previousTab
+map w nextTab
+map ㅈ nextTab
+map f LinkHints.activateMode
+map ㄹ LinkHints.activateMode
+map r LinkHints.activateModeToOpenInNewForegroundTab
+map ㄱ LinkHints.activateModeToOpenInNewForegroundTab
+map z restoreTab
+map ㅋ restoreTab
+map ㅐ Vomnibar.activate
+map ㅒ Vomnibar.activateInNewTab
+map ㅠ Vomnibar.activateBookmarks
+map 0 firstTab
+map $ lastTab
+map ㅌ removeTab
+map ㅗ scrollLeft
+map ㅣ scrollRight
+map r reload
+map ㄱ reload
