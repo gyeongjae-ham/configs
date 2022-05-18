@@ -33,3 +33,4 @@ map ㅣ scrollRight
 map r reload
 map ㄱ reload
 map ㅖ openCopiedUrlInNewTab
+map ㅅ createTab
