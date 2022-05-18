@@ -2,8 +2,8 @@
 
 map d scrollPageDown
 map ㅇ scrollPageDown
-map u scrollPageUp
-map ㅕ scrollPageUp
+map e scrollPageUp
+map ㄷ scrollPageUp
 map k scrollUp
 map ㅏ scrollUp
 map j scrollDown
@@ -18,8 +18,8 @@ map w nextTab
 map ㅈ nextTab
 map f LinkHints.activateMode
 map ㄹ LinkHints.activateMode
-map r LinkHints.activateModeToOpenInNewForegroundTab
-map ㄱ LinkHints.activateModeToOpenInNewForegroundTab
+map t LinkHints.activateModeToOpenInNewForegroundTab
+map ㅅ LinkHints.activateModeToOpenInNewForegroundTab
 map z restoreTab
 map ㅋ restoreTab
 map ㅐ Vomnibar.activate
@@ -33,4 +33,5 @@ map ㅣ scrollRight
 map r reload
 map ㄱ reload
 map ㅖ openCopiedUrlInNewTab
-map ㅅ createTab
+map n createTab
+map ㅜ createTab
