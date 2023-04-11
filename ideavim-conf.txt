@@ -7,8 +7,6 @@ Plug 'preservim/nerdtree`
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
-" imap kj <ESC>
-set timeoutlen=150
 let mapleader = ","
 " easymotion set
 map <leader>w <Plug>(easymotion-w)
@@ -22,8 +20,6 @@ map <C-X>  <A-X>
 map g<C-N> g<A-N>
 " Do incremental searching.
 set keep-english-in-normal
-set visualbell
-set noerrorbells
 set incsearch
 set ignorecase
 set smartcase
@@ -35,10 +31,12 @@ set NERDTree
 set surround
 set commentary
 set multiple-cursors
+set visualbell
+set noerrorbells
 
 " ; set
-nnoremap ; :
-vnoremap ; :
+" nnoremap ; :
+" vnoremap ; :
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -52,7 +50,9 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 nnoremap <leader>f gt
 nnoremap <leader>d gT
-nnoremap :qa :action CloseAllEditors<CR>
+nnoremap <leader>Q :action CloseAllEditors<CR>
+nnoremap <leader>q :action CloseContent<CR>
+nnoremap <leader>w :action SaveAll<CR>
 
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
@@ -66,7 +66,6 @@ imap <S-Up> <Esc>v<Up>
 imap <S-Down> <Esc>v<Down>
 imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>```
-
 
 
 " 리로드, 복사, 붙여넣기
