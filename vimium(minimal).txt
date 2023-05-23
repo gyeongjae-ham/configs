@@ -9,6 +9,41 @@ map ㅠ Vomnibar.activateBookmarksInNewTab
 map z restoreTab
 map ㅋ restoreTab
 
+unmap gg
+unmap G
+unmap h
+unmap l
+unmap yy
+unmap p
+unmap i
+unmap v
+unmap gi
+unmap F
+unmap gF
+unmap o
+unmap O
+unmap T
+unmap /
+unmap N
+unmap H
+unmap L
+unmap J
+unmap gT
+unmap K
+unmap gT
+unmap ^
+unmap g0
+unmap g$
+unmap yt
+unmap <a-p>
+unmap <a-m>
+unmap x
+unmap X
+unmap P
+unmap gt
+unmap gf
+unmap <c-e>
+unmap <c-y>
 unmap d 
 unmap e 
 unmap a 
