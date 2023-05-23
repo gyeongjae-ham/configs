@@ -22,7 +22,8 @@ map z restoreTab
 map ㅋ restoreTab
 map ㅐ Vomnibar.activate
 map ㅒ Vomnibar.activateInNewTab
-map ㅠ Vomnibar.activateBookmarks
+map b Vomnibar.activateBookmarksInNewTab
+map ㅠ Vomnibar.activateBookmarksInNewTab
 map 0 firstTab
 map $ lastTab
 map ㅌ removeTab
@@ -34,3 +35,4 @@ map ㅖ openCopiedUrlInNewTab
 map n createTab
 map ㅜ createTab
 map ㅎㅑ focusInput
+unmap u

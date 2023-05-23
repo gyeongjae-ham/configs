@@ -1,0 +1,24 @@
+# Insert your preferred key mappings here.
+
+map k scrollUp
+map ㅏ scrollUp
+map j scrollDown
+map ㅓ scrollDown 
+map b Vomnibar.activateBookmarksInNewTab
+map ㅠ Vomnibar.activateBookmarksInNewTab
+map z restoreTab
+map ㅋ restoreTab
+
+unmap d 
+unmap e 
+unmap a 
+unmap s 
+unmap q 
+unmap w 
+unmap f 
+unmap t 
+unmap r
+unmap 0
+unmap $
+unmap n
+unmap u
