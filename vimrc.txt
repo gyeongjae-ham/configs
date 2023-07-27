@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
+Plug 'tribela/vim-transparent'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree'
 Plug 'pangloss/vim-javascript'
@@ -17,7 +19,7 @@ endif
 
 imap kj <ESC>
 set timeoutlen=150
-set clipboard=unnamed
+set clipboard=unnamedplus
 " vim Í∏∞Î≥∏Ï†ÅÏù∏ ÎÑ§ÎπÑÍ≤åÏù¥ÏÖò ÏÑ∏ÌåÖ
 nnoremap ; :
 vnoremap ; :
@@ -69,6 +71,12 @@ set fileencodings=utf8,euc-kr
 set t_Co=256
 set cursorline
 colorscheme onehalfdark
+
+let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identifier',
+                            \ 'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String',
+                            \ 'Function', 'Conditional', 'Repeat', 'Operator', 'Structure',
+                            \ 'LineNr', 'NonText', 'SignColumn', 'CursorLineNr', 'EndOfBuffer']
+
 let g:airline_theme='onehalfdark'
 " lightline
-" let g:lightline = { 'colorscheme': 'onehalfdark' }
+let g:lightline = { 'colorscheme': 'onehalfdark' }

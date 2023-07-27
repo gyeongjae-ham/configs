@@ -16,15 +16,3 @@
 	sm = switch main
 	sw = switch
 	rs = restore .
-
-	alias vim="nvim"
-	alias vi="nvim"
-	alias gm="gitmoji -c"
-	alias la="lsd -al --no-symlink"
-	alias ls="lsd --no-symlink"
-	alias ll="lsd -l --no-symlink"
-	alias lt="lsd --tree --no-symlink"
-	alias tl="tmux ls"
-	alias td="tmux detach"
-	alias ta="tmux a"
-
