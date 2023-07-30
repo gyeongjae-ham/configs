@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql
+    restart: unless-stopped
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: slfl4861
+    stdin_open: true
+    tty: true
+    volumes:
+      - /Users/luca/Desktop/infra/db/mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
