@@ -1,0 +1,19 @@
+1. 진한 색상표
+
+9C27B0
+F44336
+FFC107
+4CAF50
+2196F3
+C6C6CC
+
+===============
+
+2. 파스텔톤
+
+CAA6FE
+FFAFB0
+FDFA87
+AFFFBA
+F2CFA5
+C4F4FE
