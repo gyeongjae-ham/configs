@@ -4,6 +4,8 @@
 [alias]
 	a = add .
 	f = fetch
+	pm = push origin main
+	po = push origin
 	ba = branch -a
 	bd = branch -D
 	s = status -s
