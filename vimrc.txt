@@ -1,4 +1,9 @@
 call plug#begin('~/.vim/plugged')
+Plug 'glepnir/oceanic-material'
+Plug 'nordtheme/vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arzg/vim-colors-xcode'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'tribela/vim-transparent'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'vim-airline/vim-airline'
@@ -70,7 +75,7 @@ set fileencodings=utf8,euc-kr
 
 set t_Co=256
 set cursorline
-colorscheme onehalfdark
+colorscheme oceanic_material
 
 let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identifier',
                             \ 'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String',
@@ -79,4 +84,4 @@ let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identif
 
 let g:airline_theme='onehalfdark'
 " lightline
-let g:lightline = { 'colorscheme': 'onehalfdark' }
+" let g:lightline = { 'colorscheme': 'dracula' }
