@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'glepnir/oceanic-material'
 Plug 'nordtheme/vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -16,21 +17,23 @@ Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'psliwka/vim-smoothie'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 if has("syntax")
 	syntax on
 endif
 
-imap kj <ESC>
 set timeoutlen=150
 set clipboard=unnamedplus
-" vim Í∏∞Î≥∏Ï†ÅÏù∏ ÎÑ§ÎπÑÍ≤åÏù¥ÏÖò ÏÑ∏ÌåÖ
+
+" ; set
 nnoremap ; :
 vnoremap ; :
 let mapleader= ","
 
-" easymotion ÏÑ§Ï†ï
+" easymotion insert
 map <leader>w <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
 map <leader>e <Plug>(easymotion-bd-e)
@@ -42,13 +45,13 @@ map <C-P>  <A-P>
 map <C-X>  <A-X>
 map g<C-N> g<A-N>
 
-" NERDTree ÏÑ§Ï†ï
+" NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" fugitive(git Í¥ÄÎ†®) ÏÑ§Ï†ï
+" fugitive(git)
 nnoremap <space>ga :Git add %<TAB><Cr>
 nnoremap <space>gs :G status<CR>
 nnoremap <space>gc :G commit -m
@@ -56,7 +59,17 @@ nnoremap <space>gl :G log<CR>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 
-" vim Í∏∞Î≥∏ ÏÑ§Ï†ïÎì§
+" select configuration
+noremap <leader>d vi"
+noremap <leader>a va"
+noremap <leader>r vi(
+noremap <leader>t va(
+noremap <leader>v viw
+
+" cancel find result
+noremap <leader>c :nohl<CR>
+
+" vim configuration
 set hlsearch
 set nu
 set rnu

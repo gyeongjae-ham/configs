@@ -2,6 +2,8 @@
 "source ~/.vimrc
 
 Plug 'preservim/nerdtree`
+Plug 'psliwka/vim-smoothie'
+Plug 'machakann/vim-highlightedyank'
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
@@ -37,6 +39,16 @@ set noerrorbells
 " ; set
 " nnoremap ; :
 " vnoremap ; :
+
+" select configuration
+noremap <leader>d vi"
+noremap <leader>a va"
+noremap <leader>r vi(
+noremap <leader>t va(
+noremap <leader>v viw
+
+" cancel find result
+noremap <leader>c :nohl<CR>
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -74,7 +86,7 @@ imap <S-Right> <Esc>v<Right>```
 set clipboard+=unnamed
 set clipboard+=ideaput
 nnoremap \e :e ~/.ideavimrc<CR>
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap \r :source ~/.ideavimrc<CR>
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
