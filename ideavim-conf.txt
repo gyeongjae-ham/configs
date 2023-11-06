@@ -44,8 +44,17 @@ set noerrorbells
 noremap <leader>d vi"
 noremap <leader>a va"
 noremap <leader>r vi(
+noremap <leader>R vi{
 noremap <leader>t va(
+noremap <leader>T va{
 noremap <leader>v viw
+
+" delete and cut set
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+xnoremap p "_dP
 
 " cancel find result
 noremap <leader>c :nohl<CR>
