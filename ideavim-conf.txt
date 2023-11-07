@@ -1,7 +1,5 @@
 "" Source your .vimrc
-"source ~/.vimrc
-
-Plug 'preservim/nerdtree`
+Plug 'preservim/nerdtree'
 Plug 'psliwka/vim-smoothie'
 Plug 'machakann/vim-highlightedyank'
 
@@ -10,16 +8,19 @@ Plug 'machakann/vim-highlightedyank'
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 let mapleader = ","
+
 " easymotion set
 map <leader>w <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
 map <leader>e <Plug>(easymotion-bd-e)
 map <leader>f <Plug>(easymotion-s)
+
 " multi cursor set
 map <C-N>  <A-N>
 map <C-P>  <A-P>
 map <C-X>  <A-X>
 map g<C-N> g<A-N>
+
 " Do incremental searching.
 set keep-english-in-normal
 set incsearch
@@ -57,7 +58,7 @@ vnoremap d "_d
 xnoremap p "_dP
 
 " cancel find result
-noremap <leader>c :nohl<CR>
+noremap <leader>c :nohlsearch<CR>
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -100,16 +101,6 @@ nnoremap \r :source ~/.ideavimrc<CR>
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
-
-
 " Find more examples here: https://jb.gg/share-ideavimrc
 set ideajoin
+
