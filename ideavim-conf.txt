@@ -13,7 +13,7 @@ let mapleader = ","
 map <leader>w <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
 map <leader>e <Plug>(easymotion-bd-e)
-map <leader>f <Plug>(easymotion-s)
+map <leader>s <Plug>(easymotion-s)
 
 " multi cursor set
 map <C-N>  <A-N>
@@ -42,13 +42,15 @@ set noerrorbells
 " vnoremap ; :
 
 " select configuration
-noremap <leader>d vi"
-noremap <leader>a va"
-noremap <leader>r vi(
-noremap <leader>R vi{
-noremap <leader>t va(
-noremap <leader>T va{
-noremap <leader>v viw
+nnoremap <leader>d vi"
+nnoremap <leader>e vi'
+nnoremap <leader>r vi(
+nnoremap <leader>t va(
+nnoremap <leader>v viw
+
+" move cursor
+nnoremap <leader>a ^
+nnoremap <leader>f $
 
 " delete and cut set
 nnoremap x "_x
@@ -58,23 +60,22 @@ vnoremap d "_d
 xnoremap p "_dP
 
 " cancel find result
-noremap <leader>c :nohlsearch<CR>
+nnoremap <leader>c :nohlsearch<CR>
 
 " Go to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
 nnoremap <tab> gt
 nnoremap <S-tab> gT
 nnoremap <leader>Q :action CloseAllEditors<CR>
 nnoremap <leader>q :action CloseContent<CR>
-nnoremap <leader>s :action SaveAll<CR>
 nnoremap <leader>G :action CloseAllEditorsButActive<CR>
 nnoremap <leader>g :action SaveAll<CR> :action CloseContent<CR>
 
@@ -90,6 +91,8 @@ imap <S-Up> <Esc>v<Up>
 imap <S-Down> <Esc>v<Down>
 imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>```
+imap <leader>a <Esc>0
+imap <leader>f <Esc>$
 
 
 " 리로드, 복사, 붙여넣기
@@ -103,4 +106,3 @@ map Q gq
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 set ideajoin
-

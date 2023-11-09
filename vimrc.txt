@@ -37,7 +37,7 @@ let mapleader= ","
 map <leader>w <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
 map <leader>e <Plug>(easymotion-bd-e)
-map <leader>f <Plug>(easymotion-s)
+map <leader>s <Plug>(easymotion-s)
 
 " multi cursor set
 map <C-N>  <A-N>
@@ -60,14 +60,18 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 
 " select configuration
-noremap <leader>d vi"
-noremap <leader>a va"
-noremap <leader>r vi(
-noremap <leader>t va(
-noremap <leader>v viw
+nnoremap <leader>d vi"
+nnoremap <leader>e va'
+nnoremap <leader>r vi(
+nnoremap <leader>t va{
+nnoremap <leader>v viw
+nnoremap <leader>a ^
+nnoremap <leader>f $
+inoremap <leader>a <Esc>^
+inoremap <leader>f <Esc>$
 
 " cancel find result
-noremap <leader>c :nohl<CR>
+nnoremap <leader>c :nohlsearch<CR>
 
 " vim configuration
 set hlsearch
