@@ -1,9 +1,9 @@
-"" Source your .vimrc
+" Source your .vimrc
 Plug 'preservim/nerdtree'
 Plug 'psliwka/vim-smoothie'
 Plug 'machakann/vim-highlightedyank'
 
-"" -- Suggested options --
+" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
@@ -51,6 +51,10 @@ nnoremap <leader>v viw
 " move cursor
 nnoremap <leader>a ^
 nnoremap <leader>f $
+vnoremap <leader>a ^
+vnoremap <leader>f $
+inoremap <leader>a <Esc>0
+inoremap <leader>f <Esc>$
 
 " delete and cut set
 nnoremap x "_x
@@ -90,10 +94,7 @@ vmap <S-Right> <Right>
 imap <S-Up> <Esc>v<Up>
 imap <S-Down> <Esc>v<Down>
 imap <S-Left> <Esc>v<Left>
-imap <S-Right> <Esc>v<Right>```
-imap <leader>a <Esc>0
-imap <leader>f <Esc>$
-
+imap <S-Right> <Esc>v<Right>
 
 " 리로드, 복사, 붙여넣기
 set clipboard+=unnamed
