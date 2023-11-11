@@ -59,6 +59,16 @@ nnoremap <space>gl :G log<CR>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 
+" split window
+nnoremap vs :vs<CR>
+nnoremap sp :sp<CR>
+
+" move cursor when window is split
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
+
 " select configuration
 nnoremap <leader>d vi"
 nnoremap <leader>e va'

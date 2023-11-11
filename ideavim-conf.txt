@@ -15,6 +15,16 @@ map <leader>b <Plug>(easymotion-b)
 map <leader>e <Plug>(easymotion-bd-e)
 map <leader>s <Plug>(easymotion-s)
 
+" split window
+nnoremap vs :vs<CR>
+nnoremap sp :sp<CR>
+
+" move cursor when window is split
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
+
 " multi cursor set
 map <C-N>  <A-N>
 map <C-P>  <A-P>
