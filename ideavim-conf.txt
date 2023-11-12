@@ -63,8 +63,6 @@ nnoremap <leader>a ^
 nnoremap <leader>f $
 vnoremap <leader>a ^
 vnoremap <leader>f $
-inoremap <leader>a <Esc>0
-inoremap <leader>f <Esc>$
 
 " delete and cut set
 nnoremap x "_x
@@ -88,10 +86,9 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <tab> gt
 nnoremap <S-tab> gT
-nnoremap <leader>Q :action CloseAllEditors<CR>
-nnoremap <leader>q :action CloseContent<CR>
-nnoremap <leader>G :action CloseAllEditorsButActive<CR>
+nnoremap <leader>Q :action SaveAll<CR> :action CloseAllEditors<CR>
 nnoremap <leader>g :action SaveAll<CR> :action CloseContent<CR>
+nnoremap <leader>G :action CloseAllEditorsButActive<CR>
 
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
