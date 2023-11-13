@@ -77,8 +77,6 @@ nnoremap <leader>t va{
 nnoremap <leader>v viw
 nnoremap <leader>a ^
 nnoremap <leader>f $
-inoremap <leader>a <Esc>^
-inoremap <leader>f <Esc>$
 
 " cancel find result
 nnoremap <leader>c :nohlsearch<CR>
