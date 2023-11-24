@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  redis:
+    container_name: redis
+    image: redis:7-bookworm
+    ports: 
+      - 6379:6379
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes: 
+      - /Users/luca/Desktop/.util/db/redis/data:/data
+      - /Users/luca/Desktop/.util/db/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
+    restart: unless-stopped

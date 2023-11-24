@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.2.0-oracle
+    restart: unless-stopped
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=slfl4861
+      - TZ=Asia/Seoul
+    stdin_open: true
+    tty: true
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - /Users/luca/Desktop/.util/db/mysql/data:/var/lib/mysql
+      - /Users/luca/Desktop/.util/db/mysql/conf.d:/etc/mysql/conf.d
+    ports:
+      - 3306:3306
