@@ -58,6 +58,9 @@ nnoremap <leader>r vi(
 nnoremap <leader>t va(
 nnoremap <leader>v viw
 
+" common configuration
+vnoremap <leader>n :norm 
+
 " move cursor
 nnoremap <leader>a ^
 nnoremap <leader>f $
@@ -114,3 +117,4 @@ map Q gq
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 set ideajoin
+
