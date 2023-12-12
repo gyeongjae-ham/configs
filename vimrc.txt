@@ -34,9 +34,6 @@ vnoremap ; :
 let mapleader= ","
 
 " easymotion insert
-map <leader>w <Plug>(easymotion-w)
-map <leader>b <Plug>(easymotion-b)
-map <leader>e <Plug>(easymotion-bd-e)
 map <leader>s <Plug>(easymotion-s)
 
 " multi cursor set
@@ -73,10 +70,15 @@ nnoremap <C-J> <C-W>j
 nnoremap <leader>d vi"
 nnoremap <leader>e va'
 nnoremap <leader>r vi(
-nnoremap <leader>t va{
+nnoremap <leader>t vi{
 nnoremap <leader>v viw
 nnoremap <leader>a ^
 nnoremap <leader>f $
+vnoremap <leader>a ^
+vnoremap <leader>f $
+
+" common configuration
+vnoremap <leader>n :norm 
 
 " cancel find result
 nnoremap <leader>c :nohlsearch<CR>
@@ -100,7 +102,7 @@ set fileencodings=utf8,euc-kr
 
 set t_Co=256
 set cursorline
-colorscheme oceanic_material
+colorscheme onehalfdark
 
 let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identifier',
                             \ 'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String',
