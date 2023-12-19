@@ -10,9 +10,6 @@ set scrolloff=5
 let mapleader = ","
 
 " easymotion set
-map <leader>w <Plug>(easymotion-w)
-map <leader>b <Plug>(easymotion-b)
-map <leader>e <Plug>(easymotion-bd-e)
 map <leader>s <Plug>(easymotion-s)
 
 " split window
@@ -55,8 +52,9 @@ set noerrorbells
 nnoremap <leader>d vi"
 nnoremap <leader>e vi'
 nnoremap <leader>r vi(
-nnoremap <leader>t va(
+nnoremap <leader>t vi{
 nnoremap <leader>v viw
+nnoremap <leader>x <S-V>x
 
 " common configuration
 vnoremap <leader>n :norm 

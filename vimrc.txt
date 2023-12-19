@@ -72,6 +72,9 @@ nnoremap <leader>e va'
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
+nnoremap <leader>x <S-V>x
+
+" move cursor
 nnoremap <leader>a ^
 nnoremap <leader>f $
 vnoremap <leader>a ^
