@@ -57,8 +57,8 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 
 " split window
-nnoremap vs :vs<CR>
-nnoremap sp :sp<CR>
+nnoremap <M-1> :vs<CR>
+nnoremap <M-2> :sp<CR>
 
 " move cursor when window is split
 nnoremap <C-H> <C-W>h
