@@ -114,4 +114,5 @@ let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identif
 
 let g:airline_theme='onehalfdark'
 " lightline
+
 " let g:lightline = { 'colorscheme': 'dracula' }
