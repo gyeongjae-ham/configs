@@ -1,81 +1,81 @@
-" Source your .vimrc
-Plug 'preservim/nerdtree'
-Plug 'psliwka/vim-smoothie'
-Plug 'machakann/vim-highlightedyank'
+""" 플러그인  --------------------------------
+plug 'tpope/vim-surround'
+plug 'terryma/vim-multiple-cursors'
+plug 'machakann/vim-highlightedyank'
+plug 'preservim/nerdtree'
 
-" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+""" 플러그인 설정 ------------------------------
+let g:highlightedyank_highlight_duration=100
+
+""" 맵 리더 설정 -------------------------------
 let mapleader = ","
 
-" easymotion set
-map <leader>s <Plug>(easymotion-s)
-
-" split window
-nnoremap <M-1> :vs<CR>
-nnoremap <M-2> :sp<CR>
-
-" move cursor when window is split
-nnoremap <C-H> <C-W>h
-nnoremap <C-L> <C-W>l
-nnoremap <C-K> <C-W>k
-nnoremap <C-J> <C-W>j
-
-" multi cursor set
-map <C-N>  <A-N>
-map <C-P>  <A-P>
-map <C-X>  <A-X>
-map g<C-N> g<A-N>
-
-" Do incremental searching.
-set keep-english-in-normal
+""" 기본 설정 ---------------------------------
+set scrolloff=15
 set incsearch
+set number
+set visualbell
 set ignorecase
+set noerrorbells
 set smartcase
 set hlsearch
 set easymotion
 set relativenumber
 set number
-set NERDTree
+set nerdtree
 set surround
 set commentary
 set multiple-cursors
-set visualbell
-set noerrorbells
+set clipboard+=unnamed
+set clipboard+=ideaput
 
-" ; set
-" nnoremap ; :
-" vnoremap ; :
+""" easymotion 설정 ---------------------------
+map <leader><leader> <plug>(easymotion-s)
 
-" select configuration
+""" split window 설정 -------------------------
+nnoremap <m-1> :vs<cr>
+nnoremap <m-2> :sp<cr>
+
+""" 화면 분할시 커서 이동 설정  --------------------
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-k> <c-w>k
+nnoremap <c-j> <c-w>j
+
+""" 멀티 커서 설정 ------------------------------
+map <c-n> <a-n>
+map <c-p> <a-p>
+map <c-x> <a-x>
+map g<c-n> g<a-n>
+
+""" 선택 편의 설정 ------------------------------
 nnoremap <leader>d vi"
 nnoremap <leader>e vi'
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
-nnoremap <leader>x <S-V>x
+nnoremap <leader>x <s-v>x
 
-" common configuration
-vnoremap <leader>n :norm 
+""" norm 설정 ---------------------------------
+vnoremap <leader>n :norm
 
-" move cursor
+""" 커서 이동 설정 ------------------------------
 nnoremap <leader>a ^
 nnoremap <leader>f $
 vnoremap <leader>a ^
 vnoremap <leader>f $
 
-" delete and cut set
+""" 삭제 명령어 클립보드 저장 여부 설정 --------------
 nnoremap x "_x
 nnoremap d "_d
-nnoremap D "_D
+nnoremap d "_d
 vnoremap d "_d
-xnoremap p "_dP
+xnoremap p "_dp
 
-" cancel find result
-nnoremap <leader>c :nohlsearch<CR>
+""" 검색 하이라이트 취소 설정 ----------------------
+nnoremap <leader>c :nohlsearch<cr>
 
-" Go to tab by number
+""" 탭 이동 설정 --------------------------------
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -86,32 +86,35 @@ nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <tab> gt
-nnoremap <S-tab> gT
-nnoremap <leader>Q :action SaveAll<CR> :action CloseAllEditors<CR>
-nnoremap <leader>g :action SaveAll<CR> :action CloseContent<CR>
-nnoremap <leader>G :action CloseAllEditorsButActive<CR>
+nnoremap <s-tab> gt
+nnoremap <leader>q :action SaveAll<cr> :action CloseAllEditors<cr>
+nnoremap <leader>g :action SaveAll<cr> :action CloseContent<cr>
+nnoremap <leader>g :action CloseAllEditorsButActive<cr>
+nnoremap <leader>s :action SaveAll<cr>
 
-nmap <S-Up> v<Up>
-nmap <S-Down> v<Down>
-nmap <S-Left> v<Left>
-nmap <S-Right> v<Right>
-vmap <S-Up> <Up>
-vmap <S-Down> <Down>
-vmap <S-Left> <Left>
-vmap <S-Right> <Right>
-imap <S-Up> <Esc>v<Up>
-imap <S-Down> <Esc>v<Down>
-imap <S-Left> <Esc>v<Left>
-imap <S-Right> <Esc>v<Right>
+""" 방향키 편의 설정 ----------------------------
+nmap <s-up> v<up>
+nmap <s-down> v<down>
+nmap <s-left> v<left>
+nmap <s-right> v<right>
+vmap <s-up> <up>
+vmap <s-down> <down>
+vmap <s-left> <left>
+vmap <s-right> <right>
+imap <s-up> <esc>v<up>
+imap <s-down> <esc>v<down>
+imap <s-left> <esc>v<left>
+imap <s-right> <esc>v<right>
 
-" 리로드, 복사, 붙여넣기
-set clipboard+=unnamed
-set clipboard+=ideaput
-nnoremap \e :e ~/.ideavimrc<CR>
-nnoremap \r :source ~/.ideavimrc<CR>
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
-" Find more examples here: https://jb.gg/share-ideavimrc
+""" idea 설정 --------------------------------
 set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+map \e :e ~/.ideavimrc<cr>
+map \r <action>(ReformatCode)
+map \t <action>(RunClass)
+map \d <action>(Debug)
+map \c <action>(Stop)
+map \b <action>(ToggleLineBreakpoint)
+map \f :NERDTreeFind<cr>
