@@ -87,9 +87,9 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <tab> gt
 nnoremap <s-tab> gt
-nnoremap <leader>q :action SaveAll<cr> :action CloseAllEditors<cr>
+nnoremap <leader>Q :action SaveAll<cr> :action CloseAllEditors<cr>
 nnoremap <leader>g :action SaveAll<cr> :action CloseContent<cr>
-nnoremap <leader>g :action CloseAllEditorsButActive<cr>
+nnoremap <leader>G :action CloseAllEditorsButActive<cr>
 nnoremap <leader>s :action SaveAll<cr>
 
 """ 방향키 편의 설정 ----------------------------
