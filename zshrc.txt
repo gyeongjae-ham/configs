@@ -29,3 +29,24 @@ alias vim="nvim"
 alias vi="nvim"
 alias vimdiff="nvim -d"
 export EDITOR=/usr/homebrew/bin/nvim
+
+## docker
+alias da="docker ps -a"
+alias de="docker exec -it "
+alias di="docker images"
+alias dri="docker rmi "
+
+## gitmoji
+alias gm="gitmoji -c"
+
+## zsh-autocomplete
+source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+## zsh-autosuggestions
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+## zsh-syntax-highlighting
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## autojump
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
