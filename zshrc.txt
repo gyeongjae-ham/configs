@@ -23,3 +23,9 @@ alias de="docker exec -it "
 
 ## common
 alias rr="rm -rf "
+
+## neovim
+alias vim="nvim"
+alias vi="nvim"
+alias vimdiff="nvim -d"
+export EDITOR=/usr/homebrew/bin/nvim
