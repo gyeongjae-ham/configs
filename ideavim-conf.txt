@@ -1,16 +1,17 @@
 """ 플러그인  --------------------------------
 plug 'tpope/vim-surround'
 plug 'terryma/vim-multiple-cursors'
-plug 'machakann/vim-highlightedyank'
+Plug 'machakann/vim-highlightedyank'
 plug 'preservim/nerdtree'
 
 """ 플러그인 설정 ------------------------------
-let g:highlightedyank_highlight_duration=100
+let g:highlightedyank_highlight_duration = 1000
 
 """ 맵 리더 설정 -------------------------------
 let mapleader = ","
 
 """ 기본 설정 ---------------------------------
+set keep-english-in-normal
 set scrolloff=15
 set incsearch
 set number
