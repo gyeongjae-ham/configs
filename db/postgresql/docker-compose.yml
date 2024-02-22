@@ -7,12 +7,14 @@ services:
     container_name: postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: luca
+      POSTGRES_USER: gyeongjae
       POSTGRES_PASSWORD: slfl4861
+      POSTGRES_DB: test
+      TZ: Asia/Seoul
     stdin_open: true
     tty: true
     ports:
       - 5432:5432
     volumes:
-      - /Users/luca/Desktop/.util/db/postgres/data:/var/lib/postgresql/data
+      - /Users/gyeongjae/Desktop/.util/db/postgres/data:/var/lib/postgresql/data
 
