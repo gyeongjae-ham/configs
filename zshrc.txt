@@ -35,6 +35,9 @@ alias da="docker ps -a"
 alias de="docker exec -it "
 alias di="docker images"
 alias dri="docker rmi "
+alias dl="docker logs --tail -f "
+alias dd="docker compose down"
+alias du="docker compose up -d"
 
 ## gitmoji
 alias gm="gitmoji -c"
