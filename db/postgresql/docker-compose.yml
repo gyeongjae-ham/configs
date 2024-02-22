@@ -4,7 +4,7 @@ services:
 
   postgres:
     image: postgres:16-bookworm
-    container_name: postgres
+    container_name: postgresql
     restart: unless-stopped
     environment:
       POSTGRES_USER: gyeongjae
@@ -16,5 +16,5 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - /Users/gyeongjae/Desktop/.util/db/postgres/data:/var/lib/postgresql/data
+      - /Users/gyeongjae/Desktop/.util/db/postgresql/data:/var/lib/postgresql/data
 
