@@ -31,7 +31,7 @@ set clipboard+=unnamed
 set clipboard+=ideaput
 
 """ easymotion 설정 ---------------------------
-map <leader><leader> <plug>(easymotion-s)
+map <leader>s <plug>(easymotion-s)
 
 """ split window 설정 -------------------------
 nnoremap <m-1> :vs<cr>
@@ -74,7 +74,7 @@ vnoremap d "_d
 xnoremap p "_dp
 
 """ 검색 하이라이트 취소 설정 ----------------------
-nnoremap <leader>c :nohlsearch<cr>
+nnoremap <leader>c :noh<cr>
 
 """ 탭 이동 설정 --------------------------------
 nnoremap <leader>1 1gt
@@ -91,7 +91,7 @@ nnoremap <s-tab> gt
 nnoremap <leader>Q :action SaveAll<cr> :action CloseAllEditors<cr>
 nnoremap <leader>g :action SaveAll<cr> :action CloseContent<cr>
 nnoremap <leader>G :action CloseAllEditorsButActive<cr>
-nnoremap <leader>s :action SaveAll<cr>
+" nnoremap <leader>s :action SaveAll<cr>
 
 """ 방향키 편의 설정 ----------------------------
 nmap <s-up> v<up>
