@@ -1,12 +1,7 @@
 call plug#begin('~/.vim/plugged')
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'glepnir/oceanic-material'
-Plug 'nordtheme/vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'arzg/vim-colors-xcode'
+Plug 'folke/tokyonight.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' } 
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'tribela/vim-transparent'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree'
@@ -105,14 +100,14 @@ set fileencodings=utf8,euc-kr
 
 set t_Co=256
 set cursorline
-colorscheme onehalfdark
+
+colorscheme tokyonight-day
+"colorscheme catppuccin-latte
 
 let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identifier',
                             \ 'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String',
                             \ 'Function', 'Conditional', 'Repeat', 'Operator', 'Structure',
                             \ 'LineNr', 'NonText', 'SignColumn', 'CursorLineNr', 'EndOfBuffer']
 
-let g:airline_theme='onehalfdark'
-" lightline
-
-" let g:lightline = { 'colorscheme': 'dracula' }
+let g:airline_theme='catppuccin'
+let g:lightline = { 'colorscheme': 'tokyonight-style' }
