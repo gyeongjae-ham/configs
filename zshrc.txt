@@ -35,12 +35,18 @@ alias da="docker ps -a"
 alias de="docker exec -it "
 alias di="docker images"
 alias dri="docker rmi "
-alias dl="docker logs --tail -f "
+alias dl="docker compose logs -f "
 alias dd="docker compose down"
 alias du="docker compose up -d"
 
 ## gitmoji
 alias gm="gitmoji -c"
+
+## webstorm
+alias ws="webstorm ."
+
+## idea
+alias id="idea ."
 
 ## zsh-autocomplete
 source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
