@@ -30,15 +30,6 @@ alias vi="nvim"
 alias vimdiff="nvim -d"
 export EDITOR=/usr/homebrew/bin/nvim
 
-## docker
-alias da="docker ps -a"
-alias de="docker exec -it "
-alias di="docker images"
-alias dri="docker rmi "
-alias dl="docker compose logs -f "
-alias dd="docker compose down"
-alias du="docker compose up -d"
-
 ## gitmoji
 alias gm="gitmoji -c"
 
@@ -48,14 +39,30 @@ alias ws="webstorm ."
 ## idea
 alias id="idea ."
 
-## zsh-autocomplete
-source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+## docker
+alias da="docker ps -a"
+alias di="docker images"
+alias dri="docker rmi "
+alias dl="docker compose logs -f "
+
+function de {
+	docker exec -it $1 bash
+}
+
+function mc {
+	mkdir -p $1
+	cd $1
+}
 
 ## zsh-autosuggestions
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-## zsh-syntax-highlighting
+# zsh-syntax-highlighting
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-## autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+# z
+. $HOMEBREW_PREFIX/etc/profile.d/z.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
