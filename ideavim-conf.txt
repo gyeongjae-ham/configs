@@ -69,9 +69,8 @@ vnoremap <leader>f $
 """ 삭제 명령어 클립보드 저장 여부 설정 --------------
 nnoremap x "_x
 nnoremap d "_d
-nnoremap d "_d
 vnoremap d "_d
-xnoremap p "_dp
+nnoremap p "_dp
 
 """ 검색 하이라이트 취소 설정 ----------------------
 nnoremap <leader>c :noh<cr>
@@ -87,7 +86,7 @@ nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <tab> gt
-nnoremap <s-tab> gt
+nnoremap <s-tab> gT
 nnoremap <leader>Q :action SaveAll<cr> :action CloseAllEditors<cr>
 nnoremap <leader>g :action SaveAll<cr> :action CloseContent<cr>
 nnoremap <leader>G :action CloseAllEditorsButActive<cr>
