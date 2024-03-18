@@ -70,7 +70,8 @@ vnoremap <leader>f $
 nnoremap x "_x
 nnoremap d "_d
 vnoremap d "_d
-nnoremap p "_dp
+xnoremap p "_dp
+"xnoremap p pgvy " xnoremap p "_dp와 같은 역할
 
 """ 검색 하이라이트 취소 설정 ----------------------
 nnoremap <leader>c :noh<cr>
