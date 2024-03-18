@@ -45,6 +45,7 @@ alias di="docker images"
 alias dri="docker rmi "
 alias dl="docker compose logs -f "
 
+# custom
 function de {
 	docker exec -it $1 bash
 }
@@ -53,6 +54,9 @@ function mc {
 	mkdir -p $1
 	cd $1
 }
+
+alias ip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
+
 
 ## zsh-autosuggestions
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
