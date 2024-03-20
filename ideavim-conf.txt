@@ -55,7 +55,7 @@ nnoremap <leader>e vi'
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
-nnoremap <C-l> ggVG
+nnoremap <C-h> ggVG
 nnoremap <leader>x <s-v>x
 
 """ norm 설정 ---------------------------------
