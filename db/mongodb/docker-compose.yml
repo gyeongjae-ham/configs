@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    restart: unless-stopped 
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=luca
+      - MONGO_INITDB_ROOT_PASSWORD=slfl4861
+      - TZ=Asia/Seoul
+    volumes:
+      - //Users/gyeongjae/Desktop/.util/db/mongodb/data:/data/db
+
+  mongo-express:
+    depends_on:
+      - mongodb
+    image: mongo-express
+    container_name: mongo-express
+    restart: unless-stopped 
+    ports:
+      - 27117:8081
+    environment:
+      - PORT=8081
+      - TZ=Asia/Seoul
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=luca
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=slfl4861
+      - ME_CONFIG_MONGODB_URL=mongodb://luca:slfl4861@mongodb:27017
+      - ME_CONFIG_BASICAUTH_USERNAME=luca
+      - ME_CONFIG_BASICAUTH_PASSWORD=slfl4861
