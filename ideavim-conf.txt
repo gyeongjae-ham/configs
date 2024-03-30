@@ -119,11 +119,10 @@ set idearefactormode=keep
 
 map \e :e ~/.ideavimrc<cr>
 map \r <action>(Run)
-map \m <action>(ReformatCode)
+map \f <action>(ReformatCode)
 map \t <action>(RunConfiguration)
 map \a <action>(RunClass)
 map \x <action>(RerunFailedTests)
 map \d <action>(Debug)
 map \c <action>(Stop)
 map \b <action>(ToggleLineBreakpoint)
-map \f :NERDTreeFind<cr>
