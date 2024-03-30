@@ -118,8 +118,11 @@ set ideastatusicon=gray
 set idearefactormode=keep
 
 map \e :e ~/.ideavimrc<cr>
-map \r <action>(ReformatCode)
-map \t <action>(RunClass)
+map \r <action>(Run)
+map \m <action>(ReformatCode)
+map \t <action>(RunConfiguration)
+map \a <action>(RunClass)
+map \x <action>(RerunFailedTests)
 map \d <action>(Debug)
 map \c <action>(Stop)
 map \b <action>(ToggleLineBreakpoint)
