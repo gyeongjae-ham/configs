@@ -66,6 +66,8 @@ nnoremap <leader>a ^
 nnoremap <leader>f $
 vnoremap <leader>a ^
 vnoremap <leader>f $
+vnoremap n <gv
+vnoremap . >gv
 
 """ 삭제 명령어 클립보드 저장 여부 설정 --------------
 nnoremap x "_x
