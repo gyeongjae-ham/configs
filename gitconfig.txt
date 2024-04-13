@@ -3,6 +3,7 @@
 
 [alias]
 	a = add .
+  c = cz commit
 	f = fetch
 	pm = push origin main
 	po = push origin

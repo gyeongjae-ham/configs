@@ -1,6 +1,6 @@
 # custom alias
-## gitmoji
-alias gm="gitmoji -c"
+## commitizen
+alias gm="git c"
 
 ## lsd
 alias la="lsd -al --no-symlink"
