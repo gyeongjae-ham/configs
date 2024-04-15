@@ -1,0 +1,2 @@
+1. For korean = `
+2. Vimode with smart caps = escape <-> capslock
