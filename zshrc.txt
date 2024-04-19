@@ -21,10 +21,13 @@ alias vimdiff="nvim -d"
 export EDITOR=/usr/homebrew/bin/nvim
 
 ## git
-alias gm="git c"
+alias gm="cz commit"
 alias gp="git push origin main"
 alias ga="git add ."
-alias gs="git status"
+alias gs="git status -s"
+alias gf="git fetch"
+alias fp="git pull --ff-only"
+alias gc="git clone "
 
 ## webstorm
 alias ws="webstorm ."
