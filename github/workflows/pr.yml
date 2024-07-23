@@ -1,0 +1,50 @@
+name: PR
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Test and Report
+    runs-on: ubuntu-latest
+    permissions:
+      # [brad] Git repo를 읽을 수 있다.
+      contents: read
+      # [brad] 보안 이벤트는 GH에 올릴 수 있다.
+      security-events: write
+      # [brad] https://github.com/EnricoMi/publish-unit-test-result-action
+      issues: read
+      checks: write
+      pull-requests: write
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Setup Gradle to cache in GH
+        uses: gradle/gradle-build-action@v2
+      - name: Test
+        run: |
+          chmod +x gradlew
+          ./gradlew test
+      # [brad] GHA 테스트 실패시 결과 파일을 볼 수가 없어 보고서 액션을 추가한다.
+      # - https://octopus.com/blog/githubactions-running-unit-tests
+      # - https://github.com/marketplace/actions/test-reporter
+      # - https://levelup.gitconnected.com/mutation-testing-as-a-more-robust-check-of-dependent-libraries-ca13af2a27ec
+      # - https://github.com/mrmlnc/fast-glob
+      - name: Report test result
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Gradle Tests
+          path: '**/build/test-results/test/TEST-*.xml'
+          reporter: java-junit
+          fail-on-error: true
+      - name: Publish test result
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: |
+            **/build/test-results/test/TEST-*.xml

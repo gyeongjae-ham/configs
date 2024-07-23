@@ -1,0 +1,72 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: wincl-project/wincl-b2b
+  # [brad] 현재 commit hash 값으로 채워진다.
+  VERSION: ${{ github.sha }}
+
+jobs:
+  # [brad] 시간이 너무 걸려서 건너뛰고 테스트는 pr.yml 에게 맡긴다.
+#  build:
+#    name: Build and Test
+#    runs-on: ubuntu-latest
+#    permissions:
+#      # [brad] Git repo를 읽을 수 있다.
+#      contents: read
+#      # [brad] 보안 이벤트는 GH에 올릴 수 있다.
+#      security-events: write
+#    steps:
+#      - name: Checkout source code
+#        uses: actions/checkout@v3
+#      - name: Set up JDK
+#        uses: actions/setup-java@v3
+#        with:
+#          distribution: temurin
+#          java-version: 21
+#      - name: Setup Gradle to cache in GH
+#        uses: gradle/gradle-build-action@v2
+#      - name: Build, lint, and test
+#        run: |
+#          chmod +x gradlew
+#          ./gradlew build
+  package:
+    name: Package and Publish
+    if: ${{ github.ref == 'refs/heads/main' }}
+#    needs: [ build ]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Setup Gradle to cache in GH
+        uses: gradle/gradle-build-action@v2
+      - name: Build container image
+        run: |
+          chmod +x gradlew
+          ./gradlew bootBuildImage \
+          --imageName ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+      - name: Log into container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish container image
+        run: |
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+          docker tag \
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} \
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest

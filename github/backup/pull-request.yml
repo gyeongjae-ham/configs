@@ -1,0 +1,29 @@
+# [brad] gh 상에서 build, test, code analysis, ghcr push까지를 commit stage 단계라고 한다.
+name: Build Stage
+on:
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build:
+    name: Checkout, Build, and Test
+    runs-on: ubuntu-latest
+    permissions:
+      # [brad] Git repo를 읽을 수 있다.
+      contents: read
+      # [brad] 보안 이벤트는 GH에 올릴 수 있다.
+      security-events: write
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Setup Gradle to cache in GH
+        uses: gradle/gradle-build-action@v2
+      - name: Build, lint, and test
+        run: |
+          chmod +x gradlew
+          ./gradlew build

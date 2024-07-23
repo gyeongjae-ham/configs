@@ -1,0 +1,58 @@
+name: QA
+# [brad] 앞에 CI workflow가 완료되면 트리거된다.
+on:
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+    branches: main
+# [brad] Acceptance test 용도로 앞에 여러 CI workflows가 빨리 종료되더라도 병목이 생기지 않도록 마지막 CI workflow만 남기고 과거 workflow는 중단시킨다.
+concurrency: acceptance
+
+env:
+  OWNER: wincl-project
+  REGISTRY: ghcr.io
+  APP_REPO: wincl-b2b
+  MANIFEST_REPO: wincl-manifest
+  APP_VERSION: ${{ github.sha }}
+
+# [brad] PRODUCTION에 준하는 STAGING 환경처럼 만들어서 테스트해야 한다. 나중에 구현하자.
+jobs:
+  functional:
+    name: Functaional Acceptance Tests
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Mocking functional acceptance tests..."
+  performance:
+    name: Functaional Acceptance Tests
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Mocking performance acceptance tests..."
+  security:
+    name: Functaional Acceptance Tests
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Mocking security acceptance tests..."
+  # [brad] 이 workflow 완료 시 wincl-manifest repo에게 event message를 전달한다.
+  deliver:
+    name: Deliver release candidate (passed container image) info to manifest repository
+    needs: [ functional, performance, security ]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deliver info to manifest repository
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        # [brad] 다른 repositor에 event를 발송할 수 있는 권한 부여
+        token: ${{ secrets.WORKFLOW_DISPATCH_TOKEN }}
+        repository: ${{ env.OWNER }}/${{ env.MANIFEST_REPO }}
+        event-type: wincl-b2b-version-update-delivery
+        client-payload: '{
+          "app_name": "${{ env.APP_REPO }}",
+          "app_image": "${{ env.REGISTRY }}/${{ env.OWNER }}/${{ env.APP_REPO }}",
+          "app_version": "${{ env.APP_VERSION }}"
+        }'
+
