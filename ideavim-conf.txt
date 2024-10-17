@@ -55,7 +55,7 @@ nnoremap <leader>e vi'
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
-nnoremap <C-h> ggVG
+nnoremap <C-o> ggVG
 nnoremap <leader>x <s-v>x
 
 """ norm 설정 ---------------------------------
@@ -74,7 +74,7 @@ nnoremap x "_x
 nnoremap d "_d
 vnoremap d "_d
 xnoremap p pgvy
-xnoremap p "_dp  " xnoremap p pgvy와 같은 역할
+"xnoremap p "_dp
 
 """ 검색 하이라이트 취소 설정 ----------------------
 nnoremap <leader>c :noh<cr>
@@ -116,15 +116,15 @@ nnoremap ]e :action GotoPreviousError<cr>
 
 """ idea 설정 --------------------------------
 set ideajoin
-set ideastatusicon=gray
+"set ideastatusicon=gray
 set idearefactormode=keep
 
 map \e :e ~/.ideavimrc<cr>
 map \r <action>(Run)
-map \f <action>(ReformatCode)
-map \t <action>(RunConfiguration)
+map \f <action>(RunConfiguration)
 map \a <action>(RunClass)
-map \x <action>(RerunFailedTests)
+map \t <action>(RerunFailedTests)
 map \d <action>(Debug)
 map \c <action>(Stop)
 map \b <action>(ToggleLineBreakpoint)
+
