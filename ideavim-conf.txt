@@ -51,7 +51,7 @@ map g<c-n> g<a-n>
 
 """ 선택 편의 설정 ------------------------------
 nnoremap <leader>d vi"
-nnoremap <leader>e vi'
+nnoremap .e vi'
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
@@ -111,8 +111,7 @@ imap <s-left> <esc>v<left>
 imap <s-right> <esc>v<right>
 
 """ 에러 위치 이동 -----------------------------
-nnoremap [e :action GotoNextError<cr>
-nnoremap ]e :action GotoPreviousError<cr>
+nnoremap <leader>e :action GotoNextError<cr>
 
 """ idea 설정 --------------------------------
 set ideajoin
@@ -123,7 +122,7 @@ map \e :e ~/.ideavimrc<cr>
 map \r <action>(Run)
 map \f <action>(RunConfiguration)
 map \a <action>(RunClass)
-map \t <action>(RerunFailedTests)
+map \x <action>(RerunFailedTests)
 map \d <action>(Debug)
 map \c <action>(Stop)
 map \b <action>(ToggleLineBreakpoint)
