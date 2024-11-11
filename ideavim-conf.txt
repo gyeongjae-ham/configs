@@ -51,15 +51,15 @@ map g<c-n> g<a-n>
 
 """ 선택 편의 설정 ------------------------------
 nnoremap <leader>d vi"
-nnoremap .e vi'
+nnoremap .e vi`
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
-nnoremap <C-o> ggVG
+nnoremap <S-o> ggVG
 nnoremap <leader>x <s-v>x
 
 """ norm 설정 ---------------------------------
-vnoremap <leader>n :norm
+vnoremap <leader>n :norm 
 
 """ 커서 이동 설정 ------------------------------
 nnoremap <leader>a ^
