@@ -37,35 +37,26 @@ function mc {
 alias ip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
 
 # git
-function s {
-  git stash save -u $1
+function w() { git switch "$@" }
+function f() { git fetch origin "$@" }
+function fp() { git push -f origin "$@" }
+function p() { git push origin "$@" }
+function pu() { git pull origin "$@" }
+function bd() { git branch -D "$@" }
+
+# completions
+_git_branch_completion() {
+    local -a branches
+    branches=(${(f)"$(git branch --format='%(refname:short)')"})
+    compadd "$@" $branches
 }
-function w {
-  git switch $1
-}
-function f {
-  git fetch origin $1
-}
-function fp {
-  git push -f origin $1
-}
-function p {
-  git push origin $1
-}
-function pu {
-  git pull origin $1
-}
-function c {
-  git commit -m "$1"
-}
-function bd {
-  git branch -D $1
-}
-alias gp="git stash pop"
-alias gsl="git stash list"
-alias st="git overview" # 사용하려면 brew install git-delta
-alias ba="git branch -a"
-alias d="git df"
+
+compdef _git_branch_completion w
+compdef _git_branch_completion f
+compdef _git_branch_completion fp
+compdef _git_branch_completion p
+compdef _git_branch_completion pu
+compdef _git_branch_completion bd
 
 ## homebrew
 export EDITOR=/usr/homebrew/bin/nvim
