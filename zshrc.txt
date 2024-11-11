@@ -63,7 +63,9 @@ function bd {
 }
 alias gp="git stash pop"
 alias gsl="git stash list"
+alias st="git overview" # 사용하려면 brew install git-delta
 alias ba="git branch -a"
+alias d="git df"
 
 ## homebrew
 export EDITOR=/usr/homebrew/bin/nvim
