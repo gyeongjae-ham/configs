@@ -38,11 +38,18 @@ alias ip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
 
 # git
 function w() { git switch "$@" }
+function s() { git overview }
 function f() { git fetch origin "$@" }
 function fp() { git push -f origin "$@" }
 function p() { git push origin "$@" }
 function pu() { git pull origin "$@" }
 function bd() { git branch -D "$@" }
+
+alias sp="git stash pop"
+alias sl="git stash list"
+alias st="git overview" # 사용하려면 brew install git-delta
+alias ba="git branch -a"
+alias d="git df"
 
 # completions
 _git_branch_completion() {
