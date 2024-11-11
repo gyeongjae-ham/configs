@@ -21,13 +21,33 @@ alias vimdiff="nvim -d"
 export EDITOR=/usr/homebrew/bin/nvim
 
 ## git
-alias gm="cz commit"
-alias gp="git push origin main"
-alias ga="git add ."
-alias gs="git status -s"
-alias gf="git fetch"
-alias fp="git pull --ff-only"
-alias gc="git clone "
+function s {
+  git stash save -u $1
+}
+function w {
+  git switch $1
+}
+function f {
+  git fetch origin $1
+}
+function fp {
+  git push -f origin $1
+}
+function p {
+  git push origin $1
+}
+function pu {
+  git pull origin $1
+}
+function c {
+  git commit -m "$1"
+}
+function bd {
+  git branch -D $1
+}
+alias gp="git stash pop"
+alias gsl="git stash list"
+alias ba="git branch -a"
 
 ## webstorm
 alias ws="webstorm ."
