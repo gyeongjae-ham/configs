@@ -1,26 +1,42 @@
-# custom alias
-## lsd
-alias la="lsd -al --no-symlink"
-alias ls="lsd --no-symlink"
-alias ll="lsd -l --no-symlink"
-alias lt="lsd --tree --no-symlink"
-
-## tmux
-alias tl="tmux ls"
-alias ta="tmux a -t"
-alias tn="tmux new -s"
-alias tk="tmux kill-session -t"
-
-## common
-alias rr="rm -rf "
-
 ## neovim
 alias vim="nvim"
 alias vi="nvim"
 alias vimdiff="nvim -d"
 export EDITOR=/usr/homebrew/bin/nvim
 
-## git
+## lsd
+alias la="lsd -al --no-symlink"
+alias ls="lsd --no-symlink"
+alias ll="lsd -l --no-symlink"
+alias lt="lsd --tree --no-symlink"
+
+## docker
+alias da="docker ps -a"
+alias di="docker images"
+alias dri="docker rmi "
+alias du="docker compose up -d"
+alias dd="docker compose down"
+alias dp="docker system prune -a"
+function de {
+  docker exec -it "$1" "${@:2}"
+}
+
+## zsh plugin
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# z
+. $HOMEBREW_PREFIX/etc/profile.d/z.sh
+
+## common
+alias rr="rm -rf "
+function mc {
+	mkdir -p $1
+	cd $1
+}
+alias ip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
+
+# git
 function s {
   git stash save -u $1
 }
@@ -49,53 +65,16 @@ alias gp="git stash pop"
 alias gsl="git stash list"
 alias ba="git branch -a"
 
-## webstorm
-alias ws="webstorm ."
+## homebrew
+export EDITOR=/usr/homebrew/bin/nvim
 
-## idea
-alias id="idea ."
+## powerlevel10k
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
-## git
-alias gm="cz commit"
-alias gs="git status -s"
-alias gf="git fetch"
-alias ga="git add ."
-alias gp="git push origin main"
-alias fp="git pull --ff-only"
-
-## docker
-alias da="docker ps -a"
-alias di="docker images"
-alias dri="docker rmi "
-alias dl="docker compose logs -f "
-alias dd="docker compose down"
-alias dp="docker system prune -a"
-
-# custom
-function de {
-  docker exec -it "$1" "${@:2}"
-}
-
-function mc {
-	mkdir -p $1
-	cd $1
-}
-
-alias ip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
-
-## zsh-autosuggestions
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zsh-syntax-highlighting
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# z
-. $HOMEBREW_PREFIX/etc/profile.d/z.sh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
