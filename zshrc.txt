@@ -38,7 +38,9 @@ alias ip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
 
 # git
 function w() { git switch "$@" }
-function s() { git overview }
+function c() { git commit -c "$@" }
+function su() { git stash save -u "$@" }
+function sc() { git switch -c "$@" }
 function f() { git fetch origin "$@" }
 function fp() { git push -f origin "$@" }
 function p() { git push origin "$@" }
