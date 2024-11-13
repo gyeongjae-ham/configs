@@ -46,6 +46,7 @@ function fp() { git push -f origin "$@" }
 function p() { git push origin "$@" }
 function pu() { git pull origin "$@" }
 function bd() { git branch -D "$@" }
+function spn() { git stash pop stash@{$@} }
 
 alias sp="git stash pop"
 alias sl="git stash list"
