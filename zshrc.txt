@@ -63,8 +63,9 @@ _git_branch_completion() {
     compadd "$@" $branches
 }
 
-## ktlint formatting
+## gradle setting
 alias gk="./gradlew ktlintFormat"
+alias gt="./gradlew test"
 
 compdef _git_branch_completion w
 compdef _git_branch_completion f
