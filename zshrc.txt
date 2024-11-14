@@ -36,7 +36,7 @@ function mc {
 }
 alias ip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
 
-# git
+## git
 function w() { git switch "$@" }
 function su() { git stash save -u "$@" }
 function sc() { git switch -c "$@" }
@@ -47,6 +47,8 @@ function p() { git push origin "$@" }
 function pu() { git pull origin "$@" }
 function bd() { git branch -D "$@" }
 function spn() { git stash pop stash@{$@} }
+function sa() { git stash apply stash@{$@} }
+function sd() { git stash drop stash@{$@} }
 
 alias sp="git stash pop"
 alias sl="git stash list"
@@ -54,12 +56,15 @@ alias st="git overview" # 사용하려면 brew install git-delta
 alias ba="git branch -a"
 alias d="git df"
 
-# completions
+## completions
 _git_branch_completion() {
     local -a branches
     branches=(${(f)"$(git branch --format='%(refname:short)')"})
     compadd "$@" $branches
 }
+
+## ktlint formatting
+alias gk="./gradlew ktlintFormat"
 
 compdef _git_branch_completion w
 compdef _git_branch_completion f
