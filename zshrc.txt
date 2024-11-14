@@ -62,17 +62,16 @@ _git_branch_completion() {
     branches=(${(f)"$(git branch --format='%(refname:short)')"})
     compadd "$@" $branches
 }
-
-## gradle setting
-alias gk="./gradlew ktlintFormat"
-alias gt="./gradlew test"
-
 compdef _git_branch_completion w
 compdef _git_branch_completion f
 compdef _git_branch_completion fp
 compdef _git_branch_completion p
 compdef _git_branch_completion pu
 compdef _git_branch_completion bd
+
+## gradle setting
+alias gk="./gradlew ktlintFormat"
+alias gt="./gradlew test"
 
 ## homebrew
 export EDITOR=/usr/homebrew/bin/nvim
