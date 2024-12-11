@@ -71,7 +71,7 @@ compdef _git_branch_completion bd
 
 ## gradle setting
 alias gk="./gradlew ktlintFormat"
-alias gt="./gradlew test"
+alias xx="./gradlew clean test --info --console=rich --stacktrace --fail-fast"
 
 ## homebrew
 export EDITOR=/usr/homebrew/bin/nvim
