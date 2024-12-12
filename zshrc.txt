@@ -62,6 +62,7 @@ _git_branch_completion() {
     branches=(${(f)"$(git branch --format='%(refname:short)')"})
     compadd "$@" $branches
 }
+
 compdef _git_branch_completion w
 compdef _git_branch_completion f
 compdef _git_branch_completion fp
