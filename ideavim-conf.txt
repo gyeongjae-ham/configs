@@ -57,7 +57,9 @@ nnoremap <leader>t vi{
 nnoremap <leader>v viw
 nnoremap .a ggVG
 nnoremap <leader>x <s-v>x
-nnoremap 'a `a
+nnoremap ma mA
+nnoremap 'a `A
+nnoremap <leader>d :delmarks a-z<cr> :delmarks A-Z<cr>
 
 """ norm 설정 ---------------------------------
 vnoremap <leader>n :norm 
