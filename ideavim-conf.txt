@@ -57,9 +57,6 @@ nnoremap <leader>t vi{
 nnoremap <leader>v viw
 nnoremap .a ggVG
 nnoremap <leader>x <s-v>x
-nnoremap ma mA
-nnoremap 'a `A
-nnoremap <leader>m :delmarks a-z<cr> :delmarks A-Z<cr>
 
 """ norm 설정 ---------------------------------
 vnoremap <leader>n :norm 
@@ -130,3 +127,17 @@ map \d <action>(Debug)
 map \c <action>(Stop)
 map \b <action>(ToggleLineBreakpoint)
 
+""" mark 표시하기
+let g:mark_a_state = 0
+function! ToggleMarkA()
+    if g:mark_a_state == 0
+        normal! mA
+        let g:mark_a_state = 1
+    else
+        delmarks A
+        let g:mark_a_state = 0
+    endif
+endfunction
+
+nnoremap qq :call ToggleMarkA()<CR>
+nnoremap aa `A
