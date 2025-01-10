@@ -48,6 +48,9 @@ map <c-n> <a-n>
 map <c-p> <a-p>
 map <c-x> <a-x>
 map g<c-n> g<a-n>
+nnoremap vv <c-v>
+nnoremap <s-a> gv$<s-a>
+nnoremap ff gv
 
 """ 선택 편의 설정 ------------------------------
 nnoremap <leader>d vi"
