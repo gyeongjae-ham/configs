@@ -3,11 +3,13 @@ font-family = Cascadia Mono NF
 font-size = 20
 
 # theme
+#theme = dracula+
 #theme = dracula
 #theme = Cyberdyne
-theme = iTerm2 Solarized Dark
+#theme = iTerm2 Solarized Dark
 #theme = Github Dark
 #theme = tokyonight-day
+theme = tokyonight
 
 # window
 cursor-style = block
@@ -15,12 +17,8 @@ adjust-cell-height = 35%
 background-opacity = 0.85
 background-blur-radius = 9
 
-mouse-hide-while-typing = true
-mouse-scroll-multiplier = 2
-
 window-padding-balance = true 
 window-save-state = always
-macos-titlebar-style=transparent
 window-colorspace = "display-p3"
 minimum-contrast = 2.3
 
@@ -71,8 +69,9 @@ keybind = cmd+s>e=equalize_splits
 # delete whole line
 keybind = cmd+backspace=text:\x15
 
-# other
+# clipboard
 copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
 
 # general
 confirm-close-surface = false
@@ -83,4 +82,17 @@ adjust-underline-thickness = -60%
 
 shell-integration-features = no-cursor,sudo,no-title
 
-auto-update = download
+# mouse
+mouse-scroll-multiplier = 2
+mouse-hide-while-typing = true
+
+# behavior
+auto-update = check
+auto-update-channel = stable
+quit-after-last-window-closed = true
+shell-integration-features = true
+
+# macos
+macos-option-as-alt = true
+macos-titlebar-style = transparent
+
