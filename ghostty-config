@@ -34,6 +34,7 @@ window-padding-x = 4
 # keybindings
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
+keybind = ctrl+enter=clear_screen
 
 # tabs 
 keybind = cmd+n=new_tab
@@ -86,13 +87,12 @@ shell-integration-features = no-cursor,sudo,no-title
 mouse-scroll-multiplier = 2
 mouse-hide-while-typing = true
 
-# behavior
+## behavior
 auto-update = check
 auto-update-channel = stable
 quit-after-last-window-closed = true
-shell-integration-features = true
 
-# macos
+## macos
 macos-option-as-alt = true
 macos-titlebar-style = transparent
 
