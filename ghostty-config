@@ -26,6 +26,7 @@ minimum-contrast = 2.3
 
 # init location
 working-directory = /Users/gyeongjae/Desktop
+window-inherit-working-directory = false
 
 # terminal size
 window-width = 130
