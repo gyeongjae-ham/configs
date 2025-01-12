@@ -14,8 +14,8 @@ theme = tokyonight
 # window
 cursor-style = block
 adjust-cell-height = 35%
-background-opacity = 0.85
-background-blur-radius = 9
+background-opacity = 0.75
+background-blur-radius = 7
 
 window-padding-balance = true 
 window-save-state = always
