@@ -5,11 +5,12 @@ font-size = 20
 # theme
 #theme = dracula+
 #theme = dracula
+theme = xcodedark
 #theme = Cyberdyne
 #theme = iTerm2 Solarized Dark
 #theme = Github Dark
 #theme = tokyonight-day
-theme = tokyonight
+#theme = tokyonight
 
 # window
 cursor-style = block
