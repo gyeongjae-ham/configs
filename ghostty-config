@@ -5,11 +5,13 @@ font-size = 20
 # theme
 #theme = dracula+
 #theme = dracula
-theme = xcodedark
+#theme = xcodedark
 #theme = oneHalfDark
 #theme = Cyberdyne
+#theme = cyberpunk
 #theme = iTerm2 Solarized Dark
-#theme = Github Dark
+theme = Everforest Dark - Hard
+##theme = Github Dark
 #theme = tokyonight-day
 #theme = tokyonight
 
@@ -25,12 +27,12 @@ window-colorspace = "display-p3"
 minimum-contrast = 2.3
 
 # init location
-working-directory = /Users/gyeongjae/Desktop
+working-directory = /Users/luca/Desktop
 window-inherit-working-directory = false
 
 # terminal size
 window-width = 130
-window-height = 40
+window-height = 35
 window-padding-x = 4
 
 # keybindings
@@ -97,4 +99,5 @@ quit-after-last-window-closed = true
 ## macos
 macos-option-as-alt = true
 macos-titlebar-style = transparent
+
 
