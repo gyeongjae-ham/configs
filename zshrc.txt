@@ -54,6 +54,7 @@ alias sp="git stash pop"
 alias sl="git stash list"
 alias st="git overview" # 사용하려면 brew install git-delta
 alias ba="git branch -a"
+alias fa="git fetch --all"
 alias d="git df"
 
 ## completions
