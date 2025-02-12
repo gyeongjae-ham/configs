@@ -56,6 +56,8 @@ alias st="git overview" # 사용하려면 brew install git-delta
 alias ba="git branch -a"
 alias fa="git fetch --all"
 alias d="git df"
+alias gr="git reset HEAD^"
+alias gsr="git reset --soft HEAD^"
 
 ## completions
 _git_branch_completion() {
