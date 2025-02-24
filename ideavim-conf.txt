@@ -51,12 +51,13 @@ map g<c-n> g<a-n>
 
 """ 선택 편의 설정 ------------------------------
 nnoremap <leader>d vi"
-nnoremap .e vi`
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
-nnoremap .a ggVG
 nnoremap <leader>x <s-v>x
+nnoremap .a ggVG
+nnoremap .e vt`
+nnoremap .d vt"
 
 """ norm 설정 ---------------------------------
 vnoremap <leader>n :norm 
@@ -77,7 +78,7 @@ xnoremap p pgvy
 "xnoremap p "_dp
 
 """ 검색 하이라이트 취소 설정 ----------------------
-nnoremap <leader>l :noh<cr>
+nnoremap <leader>l :nohlsearch<CR>
 
 """ 삭제 입력 편의 설정 ---------------------------
 nnoremap <leader>c <s-c>
