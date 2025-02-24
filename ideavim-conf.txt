@@ -1,34 +1,147 @@
-10
-    9 """ 방향키 편의 설정 ----------------------------
-    8 nmap <s-up> v<up>
-    7 nmap <s-down> v<down>
-    6 nmap <s-left> v<left>
-    5 nmap <s-right> v<right>
-    4 vmap <s-up> <up>
-    3 vmap <s-down> <down>
-    2 vmap <s-left> <left>
-    1 vmap <s-right> <right>
-  108 imap <s-up> <esc>v<up>
-    1 imap <s-down> <esc>v<down>
-    2 imap <s-left> <esc>v<left>
-    3 imap <s-right> <esc>v<right>
-    4
-    5 """ 에러 위치 이동 -----------------------------
-    6 nnoremap <leader>e :action GotoNextError<cr>
-    7
-    8 """ idea 설정 --------------------------------
-    9 set ideajoin
-   10 "set ideastatusicon=gray
-   11 set idearefactormode=keep
-   12
-   13 map \e :e ~/.ideavimrc<cr>
-   14 map \r <action>(Run)
-   15 map \f <action>(RunConfiguration)
-   16 map \a <action>(RunClass)
-   17 map \x <action>(RerunFailedTests)
-   18 map \d <action>(Debug)
-   19 map \c <action>(Stop)
-   20 map \b <action>(ToggleLineBreakpoint)
-   21
-   22 """ mark 표시하기
- NORMAL   main  ideavim-conf.txt                                                                   utf-8    󰈙 text  75%  108:1
+""" 플러그인  --------------------------------
+plug 'tpope/vim-surround'
+plug 'terryma/vim-multiple-cursors'
+Plug 'machakann/vim-highlightedyank'
+plug 'preservim/nerdtree'
+
+""" 플러그인 설정 ------------------------------
+let g:highlightedyank_highlight_duration = 1000
+
+""" 맵 리더 설정 -------------------------------
+let mapleader = ","
+
+""" 기본 설정 ---------------------------------
+set keep-english-in-normal
+set scrolloff=15
+set incsearch
+set number
+set visualbell
+set ignorecase
+set noerrorbells
+set smartcase
+set hlsearch
+set easymotion
+set relativenumber
+set number
+set nerdtree
+set surround
+set commentary
+set multiple-cursors
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+""" easymotion 설정 ---------------------------
+map <leader>s <plug>(easymotion-s)
+
+""" split window 설정 -------------------------
+nnoremap <m-1> :vs<cr>
+nnoremap <m-2> :sp<cr>
+
+""" 화면 분할시 커서 이동 설정  --------------------
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-k> <c-w>k
+nnoremap <c-j> <c-w>j
+
+""" 멀티 커서 설정 ------------------------------
+map <c-n> <a-n>
+map <c-p> <a-p>
+map <c-x> <a-x>
+map g<c-n> g<a-n>
+
+""" 선택 편의 설정 ------------------------------
+nnoremap <leader>d vi"
+nnoremap .e vi`
+nnoremap <leader>r vi(
+nnoremap <leader>t vi{
+nnoremap <leader>v viw
+nnoremap .a ggVG
+nnoremap <leader>x <s-v>x
+
+""" norm 설정 ---------------------------------
+vnoremap <leader>n :norm 
+
+""" 커서 이동 설정 ------------------------------
+nnoremap <leader>a ^
+nnoremap <leader>f $
+vnoremap <leader>a ^
+vnoremap <leader>f $
+vnoremap n <gv
+vnoremap . >gv
+
+""" 삭제 명령어 클립보드 저장 여부 설정 --------------
+nnoremap x "_x
+nnoremap d "_d
+vnoremap d "_d
+xnoremap p pgvy
+"xnoremap p "_dp
+
+""" 검색 하이라이트 취소 설정 ----------------------
+nnoremap <leader>l :noh<cr>
+
+""" 삭제 입력 편의 설정 ---------------------------
+nnoremap <leader>c <s-c>
+
+""" 탭 이동 설정 --------------------------------
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <tab> gt
+nnoremap <s-tab> gT
+nnoremap <leader>Q :action SaveAll<cr> :action CloseAllEditors<cr>
+nnoremap <leader>g :action SaveAll<cr> :action CloseContent<cr>
+nnoremap <leader>G :action CloseAllEditorsButActive<cr>
+" nnoremap <leader>s :action SaveAll<cr>
+
+""" 방향키 편의 설정 ----------------------------
+nmap <s-up> v<up>
+nmap <s-down> v<down>
+nmap <s-left> v<left>
+nmap <s-right> v<right>
+vmap <s-up> <up>
+vmap <s-down> <down>
+vmap <s-left> <left>
+vmap <s-right> <right>
+imap <s-up> <esc>v<up>
+imap <s-down> <esc>v<down>
+imap <s-left> <esc>v<left>
+imap <s-right> <esc>v<right>
+
+""" 에러 위치 이동 -----------------------------
+nnoremap <leader>e :action GotoNextError<cr>
+
+""" idea 설정 --------------------------------
+set ideajoin
+"set ideastatusicon=gray
+set idearefactormode=keep
+
+map \e :e ~/.ideavimrc<cr>
+map \r <action>(Run)
+map \f <action>(RunConfiguration)
+map \a <action>(RunClass)
+map \x <action>(RerunFailedTests)
+map \d <action>(Debug)
+map \c <action>(Stop)
+map \b <action>(ToggleLineBreakpoint)
+
+""" mark 표시하기
+let g:mark_a_state = 0
+function! ToggleMarkA()
+    if g:mark_a_state == 0
+        normal! mA
+        let g:mark_a_state = 1
+    else
+        delmarks A
+        let g:mark_a_state = 0
+    endif
+endfunction
+
+nnoremap qq :call ToggleMarkA()<CR>
+nnoremap zz `A
+
