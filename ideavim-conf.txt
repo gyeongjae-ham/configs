@@ -55,6 +55,7 @@ nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
 nnoremap <leader>x <s-v>x
+nnoremap <leader>y v$y
 nnoremap .a ggVG
 nnoremap .e vt`
 nnoremap .d vt"
