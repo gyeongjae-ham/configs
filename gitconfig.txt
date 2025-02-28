@@ -1,96 +1,117 @@
 [user]
-	email = gyeongjae.h.dev@gmail.com
-	name = Gyeongjae Ham
+    email = gyeongjae.h.dev@gmail.com
+    name = Gyeongjae Ham
 [core]
-  pager = delta
+    pager = delta
+    editor = vim
+    excludesfile = ~/.gitignore
+    fsmonitor = true
+    untrackedCache = true
 [interactive]
-  diffFilter = delta --color-only
+    diffFilter = delta --color-only
 [delta]
-  navigate = true    # n과 N으로 파일 간 이동 가능
-  light = false      # dark 모드
-  side-by-side = true    # 변경사항을 나란히 표시
-  line-numbers = true    # 라인 번호 표시
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+    diff-highlight = true
 
-  # 변경된 부분만 하이라이트
-  diff-highlight = true
-  
-  # 변경 유형별 색상
-  file-added-label = [+]
-  file-copied-label = [==]
-  file-modified-label = [*]
-  file-removed-label = [-]
-  file-renamed-label = [->]
-  
-  # 커스텀 색상
-  minus-style = normal "#340001"
-  minus-emph-style = normal "#b80000"
-  plus-style = normal "#012800"
-  plus-emph-style = normal "#006000"
-  
-  # 변경 블록 구분선
-  minus-non-emph-style = dim syntax "#340001"
-  plus-non-emph-style = dim syntax "#012800"
-  
-  # 파일 헤더에 커밋 해시 표시
-  commit-style = raw
-  file-style = omit
-  hunk-header-decoration-style = none
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
 
-  # 파일 변경 통계 표시
-  features = decorations
-  
-  # 확장된 기능 활성화
-  features = line-numbers decorations file-style
-  
-  # 삭제/추가된 라인 표시 방식
-  minus-empty-line-marker-style = red bold
-  plus-empty-line-marker-style = green bold
-  
-  # 변경된 라인 하이라이트
-  keep-plus-minus-markers = true
-  
-  # 테마 설정
-  syntax-theme = Dracula
-  # 또는 다른 테마: Monokai Extended, OneHalfDark, GitHubDark 등
-  
-  # 파일 헤더 스타일
-  file-style = bold yellow ul
-  file-decoration-style = yellow box
-  
-  # 커밋 헤더 스타일
-  commit-decoration-style = bold yellow box ul
-  
-  # 라인 하이라이팅
-  minus-style = red bold
-  minus-emph-style = brightred bold
-  plus-style = green bold
-  plus-emph-style = brightgreen bold
-  
-  # 기타 스타일링
-  zero-style = dim syntax
-  whitespace-error-style = reverse red
+    minus-style = normal "#340001"
+    minus-emph-style = normal "#b80000"
+    plus-style = normal "#012800"
+    plus-emph-style = normal "#006000"
+
+    minus-non-emph-style = dim syntax "#340001"
+    plus-non-emph-style = dim syntax "#012800"
+
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = none
+    features = decorations
+
+    features = line-numbers decorations file-style
+
+    minus-empty-line-marker-style = red bold
+    plus-empty-line-marker-style = green bold
+
+    keep-plus-minus-markers = true
+
+    syntax-theme = OneHalfDark
+
+    file-style = bold yellow ul
+    file-decoration-style = yellow box
+
+    commit-decoration-style = bold yellow box ul
+
+    minus-style = red bold
+    minus-emph-style = brightred bold
+    plus-style = green bold
+    plus-emph-style = brightgreen bold
+
+    zero-style = dim syntax
+    whitespace-error-style = reverse red
 [delta "decorations"]
-  commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
-  file-decoration-style = none
-  hunk-header-decoration-style = yellow box
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
 [alias]
-	a = add .
-  c = commit -m 
-	df = diff
-	l = log
-	hs = log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %Cgreen(%cr) %C(bold blue){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
-  overview = "!f() { echo \"=== Branch Information ===\"; git branch -vv; echo \"=== Status Overview ===\"; git status -sb; echo \"=== Modified Files ===\"; git diff --name-status; echo \"=== Staged Files ===\"; git diff --name-status --staged; echo \"=== Recent Commits ===\"; git log --oneline -n 5; echo \"=== Stashed Changes ===\"; git stash list; }; f"
+    a = add .
+    c = commit -m 
+    sc = switch -c
+    df = diff
+    l = log
+    hs = log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %Cgreen(%cr) %C(bold blue){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
+    overview = "!f() { echo \"=== Branch Information ===\"; git branch -vv; echo \"=== Status Overview ===\"; git status -sb; echo \"=== Modified Files ===\"; git diff --name-status; echo \"=== Staged Files ===\"; git diff --name-status --staged; echo \"=== Recent Commits ===\"; git log --oneline -n 5; echo \"=== Stashed Changes ===\"; git stash list; }; f"
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[core]
-	editor = vim
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
-	branch = magenta bold
-
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+    branch = magenta bold
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[init]
+    defaultBranch = main
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+[help]
+    autocorrect = prompt
+[commit]
+    verbose = true
+[rerere]
+    enabled = true
+    autoupdate = true
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+[merge]
+    conflictstyle = zdiff3
+[pull]
+    rebase = true
