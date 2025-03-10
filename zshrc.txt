@@ -49,15 +49,53 @@ function bd() { git branch -D "$@" }
 function spn() { git stash pop stash@{$@} }
 function sa() { git stash apply stash@{$@} }
 function sd() { git stash drop stash@{$@} }
+function prb() {
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  local target_branch="$1"
+  
+  echo "🔍 현재 브랜치: \033[1;36m$current_branch\033[0m"
+  echo "🎯 타겟 브랜치: \033[1;33m$target_branch\033[0m"
+  
+  # 1. 타겟 브랜치로 이동
+  echo "\n📌 Step 1: \033[1;33m$target_branch\033[0m 브랜치로 이동 중..."
+  git switch "$target_branch" || { echo "\033[1;31m❌ 브랜치 전환 실패!\033[0m"; return 1; }
+  echo "\033[1;32m✅ 브랜치 전환 완료\033[0m"
+  
+  # 2. 타겟 브랜치 pull
+  echo "\n📌 Step 2: \033[1;33m$target_branch\033[0m 브랜치 pull 중..."
+  git pull origin "$target_branch" || { 
+    echo "\033[1;31m❌ Pull 실패! 원래 브랜치로 돌아갑니다.\033[0m"
+    git switch "$current_branch"
+    return 1
+  }
+  echo "\033[1;32m✅ Pull 완료\033[0m"
+  
+  # 3. 원래 브랜치로 돌아감
+  echo "\n📌 Step 3: \033[1;36m$current_branch\033[0m 브랜치로 복귀 중..."
+  git switch "$current_branch" || { 
+    echo "\033[1;31m❌ 원래 브랜치로 복귀 실패!\033[0m"
+    return 1
+  }
+  echo "\033[1;32m✅ 브랜치 복귀 완료\033[0m"
+  
+  # 4. 타겟 브랜치를 기준으로 rebase
+  echo "\n📌 Step 4: \033[1;33m$target_branch\033[0m 기준으로 rebase 중..."
+  git rebase "$target_branch"
+  
+  local rebase_status=$?
+  if [ $rebase_status -eq 0 ]; then
+    echo "\033[1;32m✅ Rebase 완료\033[0m"
+    echo "\n\033[1;32m🎉 모든 작업이 성공적으로 완료되었습니다!\033[0m"
+  else
+    echo "\033[1;31m⚠️ Rebase 중 충돌이 발생했습니다. 충돌을 해결한 후 계속하세요.\033[0m"
+  fi
+}
 
 alias sp="git stash pop"
 alias sl="git stash list"
 alias st="git overview" # 사용하려면 brew install git-delta
 alias ba="git branch -a"
-alias fa="git fetch --all"
 alias d="git df"
-alias gr="git reset HEAD^"
-alias gsr="git reset --soft HEAD^"
 
 ## completions
 _git_branch_completion() {
@@ -72,6 +110,8 @@ compdef _git_branch_completion fp
 compdef _git_branch_completion p
 compdef _git_branch_completion pu
 compdef _git_branch_completion bd
+compdef _git_branch_completion rb
+compdef _git_branch_completion prb
 
 ## gradle setting
 alias gk="./gradlew ktlintFormat"
