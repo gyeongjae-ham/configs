@@ -81,10 +81,6 @@ xnoremap p pgvy
 """ 검색 하이라이트 취소 설정 ----------------------
 nnoremap <leader>l :nohlsearch<CR>
 
-""" 삭제 입력 편의 설정 ---------------------------
-nnoremap <leader>c <s-c>
-nnoremap <leader>z v$d
-
 """ 탭 이동 설정 --------------------------------
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
@@ -147,4 +143,3 @@ endfunction
 
 nnoremap qq :call ToggleMarkA()<CR>
 nnoremap zz `A
-
