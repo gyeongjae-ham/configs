@@ -96,6 +96,7 @@ alias sl="git stash list"
 alias st="git overview" # 사용하려면 brew install git-delta
 alias ba="git branch -a"
 alias d="git df"
+alias fo="git fetch origin"
 
 ## completions
 _git_branch_completion() {
