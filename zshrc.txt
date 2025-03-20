@@ -118,6 +118,10 @@ compdef _git_branch_completion prb
 alias gk="./gradlew ktlintFormat"
 alias xx="./gradlew clean test --info --console=rich --stacktrace --fail-fast"
 
+# c++ 설정
+alias cc="g++ -std=c++17 -Wall solve.cpp -o solve.out"
+alias rn="./solve.out"
+
 ## homebrew
 export EDITOR=/usr/homebrew/bin/nvim
 
