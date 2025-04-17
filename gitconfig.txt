@@ -68,7 +68,25 @@
     df = diff
     l = log
     hs = log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %Cgreen(%cr) %C(bold blue){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
-    overview = "!f() { echo \"=== Branch Information ===\"; git branch -vv; echo \"=== Status Overview ===\"; git status -sb; echo \"=== Modified Files ===\"; git diff --name-status; echo \"=== Staged Files ===\"; git diff --name-status --staged; echo \"=== Recent Commits ===\"; git log --oneline -n 5; echo \"=== Stashed Changes ===\"; git stash list; }; f"
+    overview = "!f() { \
+  echo \"=== Branch Information ===\"; \
+  git branch -vv; \
+  echo; \
+  echo \"=== Status Overview ===\"; \
+  git status -sb; \
+  echo; \
+  echo \"=== Modified Files ===\"; \
+  git diff --name-status; \
+  echo; \
+  echo \"=== Staged Files ===\"; \
+  git diff --name-status --staged; \
+  echo; \
+  echo \"=== Recent Commits ===\"; \
+  git log --oneline -n 5; \
+  echo; \
+  echo \"=== Stashed Changes ===\"; \
+  git stash list; \
+}; f"
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -115,3 +133,4 @@
     conflictstyle = zdiff3
 [pull]
     rebase = true
+
