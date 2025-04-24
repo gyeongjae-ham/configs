@@ -1,0 +1,16 @@
+[
+    {
+        "key": "cmd+escape",
+        "command": "workbench.files.action.showActiveFileInExplorer",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+1",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "filesExplorerFocus"
+    }
+]
