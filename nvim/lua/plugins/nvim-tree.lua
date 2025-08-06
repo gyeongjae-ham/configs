@@ -86,5 +86,46 @@ return {
 				},
 			},
 		})
+
+		local function resize_nvim_tree_by_ratio(ratio)
+			local total_width = vim.o.columns
+			local target_width = math.floor(total_width * ratio)
+
+			for _, win in ipairs(vim.api.nvim_list_wins()) do
+				local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(win))
+				if string.find(bufname, "NvimTree_") then
+					vim.api.nvim_win_call(win, function()
+						vim.cmd("vertical resize " .. target_width)
+					end)
+					break
+				end
+			end
+		end
+
+		vim.api.nvim_create_autocmd("BufEnter", {
+			pattern = "NvimTree_*",
+			callback = function()
+				vim.defer_fn(function()
+					resize_nvim_tree_by_ratio(0.25)
+				end, 50)
+			end,
+		})
+
+		vim.api.nvim_create_autocmd("VimResized", {
+			callback = function()
+				resize_nvim_tree_by_ratio(0.25)
+			end,
+		})
+
+		-- 여기에 추가
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "TelescopePreviewerLoaded",
+			callback = function()
+				vim.defer_fn(function()
+					resize_nvim_tree_by_ratio(0.25)
+				end, 50)
+			end,
+		})
 	end,
 }
+
