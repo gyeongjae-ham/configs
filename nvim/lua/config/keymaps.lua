@@ -9,11 +9,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search high
 -- Exit Vim's terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
--- OPTIONAL: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+-- Alt + h/j/k/l 로 사이즈 조절
+vim.keymap.set("n", "<A-h>", ":vertical resize -5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-l>", ":vertical resize +5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-j>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", ":resize -2<CR>", { noremap = true, silent = true })
 
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", ":wincmd h<cr>", { desc = "Move focus to the left window" })
