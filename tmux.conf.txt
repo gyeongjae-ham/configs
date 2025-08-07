@@ -38,7 +38,7 @@ bind -n S-Left  previous-window
 bind -n S-Right next-window
 
 # Use | and - to split panes
-bind | split-window -h
+bind . split-window -h
 bind / split-window -v
 
 # scrollback buffer size increase
