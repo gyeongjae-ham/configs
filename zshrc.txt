@@ -118,6 +118,7 @@ compdef _git_branch_completion prb
 alias tm="tmux"
 alias tml="tmux ls"
 alias tmk="tmux kill-server"
+alias tma="tmux a"
 
 ## gradle setting
 alias gk="./gradlew ktlintFormat"
