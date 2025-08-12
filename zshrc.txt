@@ -114,6 +114,11 @@ compdef _git_branch_completion bd
 compdef _git_branch_completion rb
 compdef _git_branch_completion prb
 
+## tmux
+alias tm="tmux"
+alias tml="tmux ls"
+alias tmk="tmux kill-server"
+
 ## gradle setting
 alias gk="./gradlew ktlintFormat"
 alias xx="./gradlew clean test --info --console=rich --stacktrace --fail-fast"
