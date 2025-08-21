@@ -50,7 +50,8 @@ map <c-x> <a-x>
 map g<c-n> g<a-n>
 
 """ 선택 편의 설정 ------------------------------
-nnoremap <leader>d vi"
+nnoremap <leader>d vi'
+nnoremap <leader>D vi"
 nnoremap <leader>r vi(
 nnoremap <leader>t vi{
 nnoremap <leader>v viw
@@ -79,7 +80,7 @@ xnoremap p pgvy
 "xnoremap p "_dp
 
 """ 검색 하이라이트 취소 설정 ----------------------
-nnoremap <leader>l :nohlsearch<CR>
+nnoremap <ESC> :nohlsearch<CR>
 
 """ 탭 이동 설정 --------------------------------
 nnoremap <leader>1 1gt
@@ -143,3 +144,4 @@ endfunction
 
 nnoremap qq :call ToggleMarkA()<CR>
 nnoremap zz `A
+
