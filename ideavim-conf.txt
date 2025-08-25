@@ -80,7 +80,7 @@ xnoremap p pgvy
 "xnoremap p "_dp
 
 """ 검색 하이라이트 취소 설정 ----------------------
-nnoremap <ESC> :nohlsearch<CR>
+nnoremap <leader><ESC> :nohlsearch<CR>
 
 """ 탭 이동 설정 --------------------------------
 nnoremap <leader>1 1gt
@@ -131,17 +131,8 @@ map \c <action>(Stop)
 map \b <action>(ToggleLineBreakpoint)
 
 """ mark 표시하기
-let g:mark_a_state = 0
-function! ToggleMarkA()
-    if g:mark_a_state == 0
-        normal! mA
-        let g:mark_a_state = 1
-    else
-        delmarks A
-        let g:mark_a_state = 0
-    endif
-endfunction
-
-nnoremap qq :call ToggleMarkA()<CR>
-nnoremap zz `A
+nnoremap <leader>m :action ToggleBookmark<CR>
+nnoremap <leader>n :action GotoNextBookmark<CR>
+nnoremap <leader>b :action GotoPreviousBookmark<CR>
+nnoremap <leader>l :action ShowBookmarks<CR>
 
